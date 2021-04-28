@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double  N, xbar,xbarm, sum, z, s, h, a;
+int x = 100.0;
+
+
+int main(void){
+printf("人数Nを入力してください\n");
+scanf("%lf", &N);
+xbar  = 100 / N;    //平均
+xbarm = xbar * -1;  
+sum = xbarm * xbarm * (N-1) + 100 * 100;    //データと平均を2乗したものの合計
+z = sum / (N-1);    //分散
+s = sqrt(z);    //標準偏差
+h = (100 - xbar) * 10 ; 
+a = h / s + 50; //偏差値
+
+printf("偏差値は%lfです。\n", a);
+}
